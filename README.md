@@ -5,25 +5,16 @@
 [![Stars](https://img.shields.io/github/stars/Awesome-RJ/Skynet-System?style=social)](https://github.com/Awesome-RJ/Skynet-System "Skynet X System")
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)](https://github.com/Awesome-RJ/Skynet-System "Skynet X System")
 
-# Sanatan Raksha System
+# Ultra-Union-scanner
 > A proactive judgement system for group chats.
-
-[![Sanatan Raksha System](https://telegra.ph/file/76198b935503fd6998c5a.jpg "Sanatan-Raksha-System")](https://github.com/itzzzzyashu/Sanatan-Raksha-System-1 "Sanatan Raksha System")
 
 ## A Telethon Userbot to make handling spam easer
 
 ## Purpose and schematics
 
-Based on the popular anime series "Psycho Pass", Sanatan-Raksha-System is designed to work in a judgement and scan system where groups can request Cymatic scans for spammers, this then connects to the Sanatan-Raksha-Network and sends the data to Sanatan-Raksha-System-core for judgement, upon the approval of which the user is judged by the dominator.
+Based on the popular anime series "Psycho Pass", Ultra-Union-scanner is designed to work in a judgement and scan system where groups can request Cymatic scans for spammers, this then connects to the TeamUltraUnion and sends the data to Ultra-Union-scanner-core for judgement, upon the approval of which the user is judged by the dominator.
 
 > To create and manage all Dominators and scanner systems in-country and to monitor the behavior of MWPSB personnel
-
-------------
-
-### Location
-
-Sanatan-Raksha-System can be seen around telegram judging people and chats and logging the information at [@SanatanRakshaSystem](http://t.me/SanatanRakshaSystem "@SanatanRakshaSystem")
-The base of operations of Skynet are Beneath the NONA Tower and are only accessible by select personnel.
 
 ------------
 
@@ -75,16 +66,15 @@ Skynet is under active development and some future plans include
 
 * Fork this repo (Private).
 
-* Fill your config values [here](https://github.com/itzzzzyashu/Sanatan-Raksha-System/blob/8e4e2f309e521cc914ccb021f0826dc8a372d9ec/Sanatan_Raksha_System/__init__.py#L23).
+* Fill your config values in `Sanatan_Raksha_System/__init__.py`.
 
 * Deploy Easily on heroku.
 
-[![deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/itzzzzyashu/Sanatan-Raksha-System.git)
+[![deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/itzzzzyashu/Ultra-Union-scanner.git)
 
 #### Credits
-- [itzzzyashu](https://github.com/itzzzyashu) : Dev
-- [Rajkumar](https://github.com/Awesome-RJ/Skynet-System) : Dev
+- [itzzzyashu](https://github.com/itzzzyashu) : Maintainer Developer
+- [Rajkumar](https://github.com/Awesome-RJ/Skynet-System) : Developer
 - [DragSama](https://github.com/sitischu) : Base
-- [AnimeKaizoku](https://github.com/AnimeKaizoku) : Base
-- [DRaj](https://github.com/draj48) : DEV
-- [Simon](https://github.com/sitischu) for the ID image! : DEV
+- [AnimeKaizoku](https://github.com/AnimeKaizoku) : Base Developers
+- [DRaj](https://github.com/draj48) : Developer

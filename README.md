@@ -1,9 +1,9 @@
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/441b48966e9f4b58a643d7c4cee8ba66)](https://app.codacy.com/gh/Awesome-RJ/Skynet-System?utm_source=github.com&utm_medium=referral&utm_content=AnimeKaizoku/SkynetSystem&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/441b48966e9f4b58a643d7c4cee8ba66)](https://app.codacy.com/gh/TeamUltraUnion/Ultra-Union-scanner?utm_source=github.com&utm_medium=referral&utm_content=TeamUltraUnion_Ultra-Union-scanner&utm_campaign=Badge_Grade_Dashboard)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Repo Size](https://img.shields.io/github/repo-size/Awesome-RJ/Skynet-System)](https://github.com/Awesome-RJ/Skynet-System "Skynet X System")
-[![Stars](https://img.shields.io/github/stars/Awesome-RJ/Skynet-System?style=social)](https://github.com/Awesome-RJ/Skynet-System "Skynet X System")
-[![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)](https://github.com/Awesome-RJ/Skynet-System "Skynet X System")
+[![Repo Size](https://img.shields.io/github/repo-size/Awesome-RJ/Skynet-System)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
+[![Stars](https://img.shields.io/github/stars/Awesome-RJ/Skynet-System?style=social)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
+[![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
 
 # Ultra-Union-scanner
 > A proactive judgement system for group chats.

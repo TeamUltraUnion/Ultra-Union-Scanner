@@ -96,11 +96,11 @@ async def auto_gban_request(event):
                     if event.chat.username
                     else f"Occurred in Private Chat - {event.chat.title}")
                 logmsg = "$AUTOSCAN"
-                logmsg += "**Scanned user:** [{event.from_id.user_id}](tg://user?id={event.from_id.user_id})"
-                logmsg += "**Reason:** 0x{c}"
-                logmsg += "**Chat:** {link}"
+                logmsg += f"**Scanned user:** [{event.from_id.user_id}](tg://user?id={event.from_id.user_id})"
+                logmsg += f"**Reason:** 0x{c}"
+                logmsg += f"**Chat:** {link}"
                 logmsg += "**Hue Color:** Yellow-green"
-                logmsg += "**Message:** {event.text}"
+                logmsg += f"**Message:** {event.text}"
                 await System.send_message(Skynet_logs, logmsg)
                 System.processed += 1
                 System.processing -= 1

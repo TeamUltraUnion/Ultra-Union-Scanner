@@ -250,7 +250,7 @@ async def resolve(event) -> None:
             return
         await System.send_message(event.chat_id,
                                   f"Info from hash {match.group(5)}:\n"
-                                  f"**Link Creator**: {data[0]}\n
+                                  f"**Link Creator**: {data[0]}\n"
                                   f"**Chat ID**: {data[1]}")
 
 

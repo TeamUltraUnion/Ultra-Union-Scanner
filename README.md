@@ -3,9 +3,11 @@
 [![Stars](https://img.shields.io/github/stars/TeamUltraUnion/Ultra-Union-scanner?style=social)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
 
-[![Ultra-Union-Scanner](https://bit.ly/3T84Mex)](https://github.com/TeamUltraUnion/Ultra-Union-Scanner.git)
+<a href="https://github.com/TeamUltraUnion/Ultra-Union-Scanner.git">
+   <img src="https://bit.ly/3T84Mex" alt="Ultra-Union-Scanner" width="100%"/>
+</a>
 
-# Ultra-Union-Scanner
+# Ultra Union Scanner
 > A proactive judgement system for group chats.
 
 ## A Telethon Userbot to make handling spam easer

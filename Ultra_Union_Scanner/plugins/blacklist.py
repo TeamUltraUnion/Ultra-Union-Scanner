@@ -1,7 +1,7 @@
-from Sanatan_Raksha_System import System, Skynet, ENFORCERS, Skynet_logs, system_cmd
+from Ultra_Union_Scanner import System, Skynet, ENFORCERS, Skynet_logs, system_cmd
 import re
-import Sanatan_Raksha_System.plugins.Mongo_DB.message_blacklist as db
-import Sanatan_Raksha_System.plugins.Mongo_DB.name_blacklist as wlc_collection
+import Ultra_Union_Scanner.plugins.Mongo_DB.message_blacklist as db
+import Ultra_Union_Scanner.plugins.Mongo_DB.name_blacklist as wlc_collection
 from telethon import events
 
 
@@ -92,12 +92,15 @@ async def auto_gban_request(event):
             pattern = r"( |^|[^\w])" + word + r"( |$|[^\w])"
             if re.search(pattern, text, flags=re.IGNORECASE):
                 c = words.index(word)
-                link = (
-                    f"t.me/{event.chat.username}/{event.message.id}"
+                link = (f"t.me/{event.chat.username}/{event.message.id}"
                     if event.chat.username
-                    else f"Occurred in Private Chat - {event.chat.title}"
-                )
-                logmsg = f"""$AUTOSCAN\n**Scanned user:** [{event.from_id.user_id}](tg://user?id={event.from_id.user_id})\n**Reason:** 0x{c}\n**Chat:** {link}\n**Hue Color:** Yellow-green\n**Message:** {event.text}"""
+                    else f"Occurred in Private Chat - {event.chat.title}")
+                logmsg = "$AUTOSCAN"
+                logmsg += "**Scanned user:** [{event.from_id.user_id}](tg://user?id={event.from_id.user_id})"
+                logmsg += "**Reason:** 0x{c}"
+                logmsg += "**Chat:** {link}"
+                logmsg += "**Hue Color:** Yellow-green"
+                logmsg += "**Message:** {event.text}"
                 await System.send_message(Skynet_logs, logmsg)
                 System.processed += 1
                 System.processing -= 1
@@ -121,7 +124,11 @@ async def auto_wlc_gban(event):
             pattern = r"( |^|[^\w])" + word + r"( |$|[^\w])"
             if re.search(pattern, text, flags=re.IGNORECASE):
                 c = words.index(word)
-                logmsg = f"""$AUTOSCAN\n**Scanned user:** [{user.id}](tg://user?id={user.id})\n**Reason:** 1x{c}\n**User joined and blacklisted string in name**\n**Matched String:** {word}\n"""
+                logmsg = f"$AUTOSCAN"
+                logmsg += f"**Scanned user:** [{user.id}](tg://user?id={user.id})"
+                logmsg += f"**Reason:** 1x{c}"
+                logmsg += "**User joined and blacklisted string in name**"
+                logmsg += f"**Matched String:** {word}"
                 await System.send_message(Skynet_logs, logmsg)
                 System.processed += 1
                 System.processing -= 1
@@ -146,8 +153,9 @@ async def get(event):
     if which:
         try:
             await event.reply(
-                f"Info from type {which.group(1)}\nPostion: {which.group(2)}\nMatches:{words[int(which.group(2))]}"
-            )
+                f"Info from type {which.group(1)}"
+                f"Postion: {which.group(2)}"
+                f"Matches:{words[int(which.group(2))]}")
         except Exception:
             return
 

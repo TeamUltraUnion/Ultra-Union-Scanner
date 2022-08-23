@@ -74,4 +74,5 @@ Skynet is under active development and some future plans include
 - [AnimeKaizoku](https://github.com/AnimeKaizoku) : Base Developers
 - [DRaj](https://github.com/draj48) : Developer
 
-> Made with 💕 by [@TeamUltraUnion](https://github.com/TeamUltraUnion)
+#
+> Made with 💕 by [@TeamUltraUnion](https://github.com/TeamUltraUnion/).

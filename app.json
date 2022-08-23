@@ -16,7 +16,7 @@
       "API_ID_KEY":{
             "description": "Get this from https://my.telegram.org, login with your telegram, click API development tools, create an app from that page, copy App api_id,and paste it here.",
             "required": false,
-            "value": "789678"
+            "value": "789698"
       },
       "API_HASH_KEY":{
             "description": "Get this from https://my.telegram.org, login with your telegram, click API development tools, copy App api_hash just below App api_id section, and paste it here.",

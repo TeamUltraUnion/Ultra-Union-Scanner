@@ -15,32 +15,32 @@
    "env": {
       "API_ID_KEY":{
             "description": "Get this from https://my.telegram.org, login with your telegram, click API development tools, create an app from that page, copy App api_id,and paste it here.",
-            "required": false,
+            "required": true,
             "value": "789698"
       },
       "API_HASH_KEY":{
             "description": "Get this from https://my.telegram.org, login with your telegram, click API development tools, copy App api_hash just below App api_id section, and paste it here.",
-            "required": false,
+            "required": true,
             "value": "Api-Hash-like-gdcgvbcc-kwbkh2jkdnj-3jkdknwkjn"
       },
       "STRING_SESSION":{
             "description": "Create a string session using API_ID, API_HASH, and Mobile number of your telegram scanner account, you can use https://replit.com/@TeamUltroid/UltroidStringSession?v=1 to create one",
-            "required": false,
+            "required": true,
             "value": "bhot bada aur ajeeb sa string session"
       },
       "HEROKU_API_KEY":{
             "description": "Visit https://dashboard.heroku.com/account and scoll down, click Reveal button in API Key section, select the api key and paste it here.",
-            "required": false,
+            "required": true,
             "value": "idhar heroku api key"
       },
       "HEROKU_APP_NAME":{
             "description": "At the top center on this page, Enter heroku app name, and copy paste it here.",
-            "required": false,
+            "required": true,
             "value": "mera-unique-heroku-app-name-657382"
       },
       "Skynet":{
             "description": "Your scanner account ID, send /id to @Missrose_bot from Scanner account on telegram to get your Scanner's Telegram ID.",
-            "required": false,
+            "required": true,
             "value": "Scanner account ki ID"
       },
       "ENFORCERS":{
@@ -50,27 +50,27 @@
       },
       "MONGO_DB_URL":{
             "description": "Enter your mongodb url here, get it from mongodb.com, create account, new cluster, go to Network Access section and add New IP Address go back to database section and Hit Connect button on your database, click Connect your Application, set driver to Python and version to 3.6 or later, then copy the database url, replace the <password> with your cluster password, don't add < or > symbols, then copy and paste it here.",
-            "required": false,
+            "required": true,
             "value": "Sara data yhi save hota h"
       },
       "Skynet_logs":{
             "description": "Telegram channel ID to log some actions, create channel and post a message, forward that message to @Missrose_bot and reply it with /id, copy the channel's ID, and paste it here.",
-            "required": false,
+            "required": true,
             "value": "-100686675467"
       },
       "Skynet_approved_logs":{
             "description": "Telegram channel where scanner will log approved bans, Create a public channel and copy paste it's username here (without @)",
-            "required": false,
+            "required": true,
             "value": "UltraUnionGBanApprovallogs"
       },
       "GBAN_MSG_LOGS":{
             "description": "Public group where scanner will log scan appeals requested by ENFORCERS.",
-            "required": false,
+            "required": true,
             "value": "Isi groups me un noobs ki Scan Request ayegi, approve by replying `?approve`"
       },
       "BOT_TOKEN":{
             "description": "Telegram bot api, Go to @botfather in telegram and create a bot and copy paste that bot token here(that botfather will give you after creating a new bot).",
-            "required": false,
+            "required": true,
             "value": "1234567890:Tele-Telegram-bot-ka-api"
       }
    }

@@ -38,7 +38,9 @@ class SkynetClient(TelegramClient):
             ).start(bot_token=BOT_TOKEN)
         super().__init__(*args, **kwargs)
 
-    def command(self, e, group, help="", flags={}, allow_unknown=False):
+    def command(self, e, group, help="", flags=None, allow_unknown=False):
+        if flags is None:
+            flags = {}
         def _on(func):
             if not group in self.groups:
                 self.groups[group] = []

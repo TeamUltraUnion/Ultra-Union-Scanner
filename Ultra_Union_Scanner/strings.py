@@ -1,6 +1,6 @@
 on_string = """
-╒═══════「 $SRSINFO 」
-「 Sanatan-Raksha-System • Server Core 」
+╒═══════「 $UUSINFO 」
+「 Ultra-Union-System • Server Core 」
 ➖➖➖➖➖➖➖➖➖
 ➛ NAME: {name}
 ➛ RANK: {Enforcer}
@@ -12,7 +12,7 @@ on_string = """
 # If you still wanna change it change the regex too
 scan_request_string = """
 ╒═══「 $SCAN 」
-Sanatan-Raksha-Scan request!
+Ultra-Union-System request!
 **• Enforcer:** {enforcer} 
 **• User scanned:** {spammer}
 **• Reason:** `{reason}`

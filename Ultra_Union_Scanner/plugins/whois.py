@@ -1,5 +1,5 @@
 from telethon.tl.functions.users import GetFullUserRequest
-from Sanatan_Raksha_System import System, system_cmd
+from Ultra_Union_Scanner import System, system_cmd
 
 
 @System.on(system_cmd(pattern=r"whois"))
@@ -23,8 +23,13 @@ async def whois(event):
         return
     await System.send_message(
         event.chat_id,
-        f"╒═══「 **Appraisal results:** 」\n**> First Name:** `{data.user.first_name}`\n**> Last Name:** `{data.user.last_name}`\n**> Username:** @{data.user.username}\n**> Userlink:** [{data.user.first_name}](tg://user?id={data.user.id})\n**> User ID:** `{data.user.id}`\n** About:** `{data.about}`",
-    )
+        f"╒═══「 **Appraisal results:** 」\n**"
+        f"**> First Name:** `{data.user.first_name}`\n"
+        f"**> Last Name:** `{data.user.last_name}`\n"
+        f"**> Username:** @{data.user.username}\n"
+        f"**> Userlink:** [{data.user.first_name}](tg://user?id={data.user.id})\n"
+        f"**> User ID:** `{data.user.id}`\n"
+        f"**> About:** `{data.about}`")
 
 
 help_plus = """ Here is Help for **Whois** -

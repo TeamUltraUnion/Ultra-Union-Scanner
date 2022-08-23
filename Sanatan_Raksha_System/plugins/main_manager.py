@@ -1,14 +1,14 @@
 import re
 
-from Sanatan_Raksha_System import Skynet_logs, ENFORCERS, Skynet, INSPECTORS
-from Sanatan_Raksha_System.strings import (
+from Ultra_Union_Scanner import Skynet_logs, ENFORCERS, Skynet, INSPECTORS
+from Ultra_Union_Scanner.strings import (
     scan_request_string,
     reject_string,
     proof_string,
     forced_scan_string,
 )
-from Sanatan_Raksha_System import System, system_cmd
-from Sanatan_Raksha_System.utils import seprate_flags, Flag
+from Ultra_Union_Scanner import System, system_cmd
+from Ultra_Union_Scanner.utils import seprate_flags, Flag
 
 
 url_regex = re.compile("(http(s)?://)?t.me/(c/)?(\w+)/(\d+)")
@@ -34,26 +34,21 @@ def get_data_from_url(url: str) -> tuple:
         Flag(
             "-f",
             "Force approve a scan. Using this with scan will auto approve it",
-            "store_true"
-        ),
+            "store_true"),
         Flag(
             "-u",
-            "Grab message from url. Use this with message link to scan the user the message link redirects to.",
-        ),
+            "Grab message from url. Use this with message link to scan the user the message link redirects to."),
         Flag(
             "-o",
             "Original Sender. Using this will gban orignal sender instead of forwarder.",
-            "store_true",
-        ),
+            "store_true"),
         Flag(
             "-r",
             "Reason to scan message with.",
             nargs="*",
-            default=None
-        )
-    ],
-    allow_unknown=True
-)
+            default=None)],
+    allow_unknown=True)
+
 async def scan(event, flags):
     replied = await event.get_reply_message()
     if flags.r:
@@ -73,8 +68,7 @@ async def scan(event, flags):
             return
         try:
             message = await System.get_messages(
-                int(data[0]) if data[0].isnumeric() else data[0], ids=int(data[1])
-            )
+                int(data[0]) if data[0].isnumeric() else data[0], ids=int(data[1]))
         except:
             await event.reply("Failed to get data from url")
             return
@@ -92,9 +86,7 @@ async def scan(event, flags):
                 spammer=message.from_id.user_id,
                 chat=f"https://t.me/{data[0]}/{data[1]}",
                 message=message.text,
-                reason=reason,
-            ),
-        )
+                reason=reason))
         return
     if not event.is_reply:
         return
@@ -130,14 +122,13 @@ async def scan(event, flags):
     chat = (
         f"t.me/{event.chat.username}/{event.message.id}"
         if event.chat.username
-        else f"t.me/c/{event.chat.id}/{event.message.id}"
-    )
+        else f"t.me/c/{event.chat.id}/{event.message.id}")
+    
     await event.reply("Connecting to Sylviorus for a cymatic scan.")
     if req_proof and req_user:
         await replied.forward_to(Skynet_logs)
         await System.gban(
-            executer.id, req_user, reason, msg.id, executer, message=replied.text
-        )
+            executer.id, req_user, reason, msg.id, executer, message=replied.text)
     if not approve:
         msg = await System.send_message(
             Skynet_logs,
@@ -146,19 +137,12 @@ async def scan(event, flags):
                 spammer=sender,
                 chat=chat,
                 message=replied.text,
-                reason=reason,
-            ),
-        )
+                reason=reason))
         return
     msg = await System.send_message(
         Skynet_logs,
-        forced_scan_string.format(
-            ins=executor, spammer=sender, chat=chat, message=replied.text, reason=reason
-        ),
-    )
-    await System.gban(
-        executer.id, target, reason, msg.id, executer, message=replied.text
-    )
+        forced_scan_string.format(ins=executor, spammer=sender, chat=chat, message=replied.text, reason=reason))
+    await System.gban(executer.id, target, reason, msg.id, executer, message=replied.text)
 
 @System.on(system_cmd(pattern=r"re(vive|vert|store) ", allow_inspectors=True))
 async def revive(event):
@@ -178,7 +162,7 @@ async def revive(event):
     await a.edit("Revert request sent to Sylviorus. This might take 10minutes or so.")
 
 
-@System.on(system_cmd(pattern=r"srs logs"))
+@System.on(system_cmd(pattern=r"uus logs"))
 async def logs(event):
     await System.send_file(event.chat_id, "log.txt")
 
@@ -186,8 +170,8 @@ async def logs(event):
     e = system_cmd(pattern=r"approve", allow_inspectors=True, force_reply=True),
     group="main",
     help="Approve a scan request.",
-    flags=[Flag("-or", "Overwrite reason", nargs="*")]
-)
+    flags=[Flag("-or", "Overwrite reason", nargs="*")])
+
 async def approve(event, flags):
     replied = await event.get_reply_message()
     match = re.match(r"\$SCAN", replied.text)
@@ -217,8 +201,7 @@ async def approve(event, flags):
                 msg_id=replied.id,
                 auto=True,
                 bot=bot,
-                message=message,
-            )
+                message=message)
             return
     overwritten = False
     if match:
@@ -233,14 +216,10 @@ async def approve(event, flags):
                     re.sub(
                         "(\*\*)?(Scan)? ?Reason:(\*\*)? (`([^`]*)`|.*)",
                         f'**Scan Reason:** `{reason}`',
-                        replied.text,
-                    )
-                )
+                        replied.text))
                 overwritten = True
             else:
-                reason = re.search(
-                    r"(\*\*)?(Scan)? ?Reason:(\*\*)? (`([^`]*)`|.*)", replied.text
-                )
+                reason = re.search(r"(\*\*)?(Scan)? ?Reason:(\*\*)? (`([^`]*)`|.*)", replied.text)
                 reason = reason.group(5) if reason.group(5) else reason.group(4)
             if len(list) > 1:
                 id1 = list[0]
@@ -259,14 +238,10 @@ async def approve(event, flags):
             except:
                 bot = False
             try:
-                message = re.search(
-                    "(\*\*)?Target Message:(\*\*)? (.*)", replied.text, re.DOTALL
-                ).group(3)
+                message = re.search("(\*\*)?Target Message:(\*\*)? (.*)", replied.text, re.DOTALL).group(3)
             except:
                 message = None
-            await System.gban(
-                enforcer, scam, reason, replied.id, sender, bot=bot, message=message
-            )
+            await System.gban(enforcer, scam, reason, replied.id, sender, bot=bot, message=message)
             orig = re.search(r"t.me/(\w+)/(\d+)", replied.text)
             if orig:
                 try:
@@ -274,14 +249,12 @@ async def approve(event, flags):
                         await System.send_message(
                             orig.group(1),
                             f"User is a target for enforcement action.\nEnforcement Mode: Lethal Eliminator\nYour reason was overwritten with: `{reason}`",
-                            reply_to=int(orig.group(2)),
-                        )
+                            reply_to=int(orig.group(2)))
                         return
                     await System.send_message(
                         orig.group(1),
                         "User is a target for enforcement action.\nEnforcement Mode: Lethal Eliminator",
-                        reply_to=int(orig.group(2)),
-                    )
+                        reply_to=int(orig.group(2)))
                 except:
                     await event.reply('Failed to notify enforcer about scan being accepted.')
 
@@ -319,7 +292,7 @@ async def reject(event):
 help_plus = """
 Here is the help for **Main**:
 Commands:
-    `scan` - Reply to a message WITH reason to send a request to Inspectors/Skynet for judgement
+    `scan` - Reply to a message WITH reason to send a request to Inspectors/Scanner for judgement
     `approve` - Approve a scan request (Only works in Skynet System Base)
     `revert` or `revive` or `restore` - Ungban ID
     `qproof` - Get quick proof from database for given user id

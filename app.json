@@ -1,6 +1,7 @@
 {
       "name": "Ultra-Union-Scanner",
       "description": "A PsychoPass themed Telegram Gban Userbot.",
+      "logo": "https://telegra.ph/file/4ef8d575996a8d61992c1.jpg",
       "keywords": ["telegram", "userbot", "scanner"],
    "repository": "https://github.com/TeamUltraUnion/Ultra-Union-Scanner",
    "addons": [

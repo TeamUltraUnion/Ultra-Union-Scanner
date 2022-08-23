@@ -4,7 +4,6 @@ import Ultra_Union_Scanner.plugins.Mongo_DB.message_blacklist as db
 import Ultra_Union_Scanner.plugins.Mongo_DB.name_blacklist as wlc_collection
 from telethon import events
 
-
 async def extract(flag, event):
     if flag:
         return re.escape(flag.group(1))

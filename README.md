@@ -1,4 +1,3 @@
-
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/441b48966e9f4b58a643d7c4cee8ba66)](https://app.codacy.com/gh/TeamUltraUnion/Ultra-Union-scanner?utm_source=github.com&utm_medium=referral&utm_content=TeamUltraUnion_Ultra-Union-scanner&utm_campaign=Badge_Grade_Dashboard)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Stars](https://img.shields.io/github/stars/TeamUltraUnion/Ultra-Union-scanner?style=social)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
@@ -69,7 +68,7 @@ Skynet is under active development and some future plans include
 
 * Deploy Easily on heroku.
 
-[![deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/itzzzzyashu/Ultra-Union-scanner.git)
+[![deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TeamUltraUnion/Ultra-Union-Scanner.git)
 
 #### Credits
 - [itzzzyashu](https://github.com/itzzzyashu) : Maintainer Developer

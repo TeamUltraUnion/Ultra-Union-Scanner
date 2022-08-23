@@ -6,7 +6,7 @@
 # Ultra-Union-Scanner
 > A proactive judgement system for group chats.
 
-[![Ultra-Union-Scanner]](https://bit.ly/3KlaDt1)
+![Ultra-Union-Scanner](https://bit.ly/3KlaDt1)
 
 ## A Telethon Userbot to make handling spam easer
 

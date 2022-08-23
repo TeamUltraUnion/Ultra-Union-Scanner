@@ -9,7 +9,6 @@ from Ultra_Union_Scanner.strings import (
 from Ultra_Union_Scanner import System, system_cmd
 from Ultra_Union_Scanner.utils import seprate_flags, Flag
 
-
 url_regex = re.compile(r"(http(s)?://)?t.me/(c/)?(\w+)/(\d+)")
 
 

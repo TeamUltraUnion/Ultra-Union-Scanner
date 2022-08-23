@@ -64,14 +64,7 @@ Skynet is under active development and some future plans include
 >Why not getting list of all module instead of manually putting module in to_load?
 - I don't want people from uniborg or ftg or other userbots to put their plugins (those weird animation ones or useless ones) in Ultra-Union-Scanner
 
-#### Hosting
-
-* Fork this repo (Private).
-
-* Fill your config values in `Ultra_Union_Scanner/__init__.py`.
-
-* Deploy Easily on heroku.
-
+#### Deploy to Heroku
 [![deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TeamUltraUnion/Ultra-Union-Scanner.git)
 
 #### Credits

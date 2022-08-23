@@ -5,8 +5,7 @@ from Ultra_Union_Scanner.strings import (
     scan_request_string,
     reject_string,
     proof_string,
-    forced_scan_string,
-)
+    forced_scan_string)
 from Ultra_Union_Scanner import System, system_cmd
 from Ultra_Union_Scanner.utils import seprate_flags, Flag
 

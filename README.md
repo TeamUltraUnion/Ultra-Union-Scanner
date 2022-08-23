@@ -3,8 +3,8 @@
 [![Stars](https://img.shields.io/github/stars/TeamUltraUnion/Ultra-Union-scanner?style=social)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
 
-<a href="https://github.com/TeamUltraUnion/Ultra-Union-Scanner.git">
-   <img src="https://bit.ly/3T84Mex" alt="Ultra-Union-Scanner" width="100%"/>
+<a align="center" href="https://github.com/TeamUltraUnion/Ultra-Union-Scanner.git">
+   <img src="https://bit.ly/3T84Mex" alt="Ultra-Union-Scanner" width="85%"/>
 </a>
 
 # Ultra Union Scanner

@@ -4,7 +4,6 @@ from Ultra_Union_Scanner.plugins.Mongo_DB.gbans import get_gban, get_gban_by_pro
 import Ultra_Union_Scanner.plugins.Mongo_DB.bot_settings as db
 
 from telethon import events, custom
-
 from typing import Union
 import logging
 import re

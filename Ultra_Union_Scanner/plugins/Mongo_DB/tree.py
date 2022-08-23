@@ -1,4 +1,4 @@
-from Sanatan_Raksha_System import MONGO_CLIENT
+from Ultra_Union_Scanner import MONGO_CLIENT
 from datetime import datetime
 from random import choice
 

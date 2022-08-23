@@ -1,4 +1,4 @@
-from Sanatan_Raksha_System import system_cmd, System
+from Ultra_Union_Scanner import system_cmd, System
 from PIL import Image, ImageDraw, ImageFont
 import os
 
@@ -7,9 +7,7 @@ import os
 async def image_maker(event) -> None:
     replied_user = await event.get_reply_message()
     # Download profile photo
-    await System.download_profile_photo(
-        replied_user.from_id.user_id, file="user.png", download_big=True
-    )
+    await System.download_profile_photo(replied_user.from_id.user_id, file="user.png", download_big=True)
     user_photo = Image.open("user.png")
     # open id photo
     id_template = Image.open("ID.png")
@@ -27,8 +25,7 @@ async def image_maker(event) -> None:
         (1000, 460),
         replied_user.sender.first_name.replace("\u2060", ""),
         fill=color,
-        font=font2,
-    )
+        font=font2)
     draw.text((393, 50), str(replied_user.from_id.user_id), fill=color, font=font)
     id_template.save("user_id.png")
     force_document = "doc" in event.text
@@ -38,6 +35,5 @@ async def image_maker(event) -> None:
         reply_to=event.message.id,
         file="user_id.png",
         force_document=force_document,
-        silent=True,
-    )
+        silent=True)
     os.remove("user_id.png")

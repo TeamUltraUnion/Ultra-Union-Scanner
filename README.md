@@ -4,7 +4,7 @@
 [![Stars](https://img.shields.io/github/stars/TeamUltraUnion/Ultra-Union-scanner?style=social)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)](https://github.com/TeamUltraUnion/Ultra-Union-scanner "Ultra-Union-scanner")
 
-# Ultra-Union-scanner
+# Ultra-Union-Scanner
 > A proactive judgement system for group chats.
 
 ## A Telethon Userbot to make handling spam easer

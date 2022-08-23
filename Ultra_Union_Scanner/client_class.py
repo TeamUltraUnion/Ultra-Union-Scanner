@@ -5,8 +5,7 @@ from .strings import (
     scan_approved_string,
     bot_gban_string,
     proof_string,
-    forced_scan_string,
-)
+    forced_scan_string)
 from .utils import FlagParser, ParseError
 
 from Ultra_Union_Scanner import (

@@ -1,4 +1,4 @@
-from Sanatan_Raksha_System import system_cmd, System
+from Ultra_Union_Scanner import system_cmd, System
 import asyncio
 import io
 
@@ -13,8 +13,7 @@ async def shell(event):
     else:
         cmd = cmd[1]
     async_process = await asyncio.create_subprocess_shell(
-        cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-    )
+        cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
     stdout, stderr = await async_process.communicate()
     msg = ""
     if stderr.decode():
@@ -29,8 +28,7 @@ async def shell(event):
                 file,
                 force_document=True,
                 caption="Output was too long, Sending as file",
-                reply_to=event.message.id,
-            )
+                reply_to=event.message.id)
             return
     await event.reply(msg)
 

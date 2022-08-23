@@ -1,7 +1,7 @@
-from Sanatan_Raksha_System import System, session, INSPECTORS, ENFORCERS, Skynet_logs
-from Sanatan_Raksha_System.strings import proof_string, scan_request_string, reject_string
-from Sanatan_Raksha_System.plugins.Mongo_DB.gbans import get_gban, get_gban_by_proofid
-import Sanatan_Raksha_System.plugins.Mongo_DB.bot_settings as db
+from Ultra_Union_Scanner import System, session, INSPECTORS, ENFORCERS, Skynet_logs
+from Ultra_Union_Scanner.strings import proof_string, scan_request_string, reject_string
+from Ultra_Union_Scanner.plugins.Mongo_DB.gbans import get_gban, get_gban_by_proofid
+import Ultra_Union_Scanner.plugins.Mongo_DB.bot_settings as db
 
 from telethon import events, custom
 
@@ -27,22 +27,22 @@ async def make_proof(user: Union[str, int]):
     if not data:
         return False
     message = data.get("message") or ""
-    async with session.post(
-        "https://nekobin.com/api/documents", json={"content": message}
-    ) as r:
+    async with session.post("https://nekobin.com/api/documents", json={"content": message}) as r:
         paste = f"https://nekobin.com/{(await r.json())['result']['key']}"
     url = "https://del.dog/documents"
     async with session.post(url, data=message.encode("UTF-8")) as f:
         r = await f.json()
         url = f"https://del.dog/{r['key']}"
-    return proof_string.format(
-        proof_id=data["proof_id"], reason=data["reason"], paste=paste, url=url
-    )
+    return proof_string.format(proof_id=data["proof_id"], reason=data["reason"], paste=paste, url=url)
 
 
 @System.bot.on(events.NewMessage(pattern="[/!]start"))
 async def sup(event):
-    await event.reply("Hello, I am not everything in **Sanatan-Raksha-System**\n• If you’re my (owner/inspector/enforcer) you can get help related to Scanner by `?help main` command (it only works for ins/enf/owner).\n• If you want to appeal a gban for a user kindly report it to **@SanatanRakshaSystemSupport**\n• Send /help to know more about my usage.\nThanks for starting me :)")
+    await event.reply("""Hello, I am not everything in **Ultra-Union-scanner**
+• If you’re my (owner/inspector/enforcer) you can get help related to Scanner by `?help main` command (it only works for ins/enf/owner).
+• If you want to appeal a gban for a user kindly report it to **@SanatanRakshaSystemSupport**
+• Send /help to know more about my usage.
+Thanks for starting me :)""")
 
 @System.bot.on(events.NewMessage(pattern="[/!]alertmode"))
 async def setalertmode(event):

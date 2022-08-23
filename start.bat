@@ -1,4 +1,4 @@
 @echo off
-TITLE Sanatan_Raksha_System
-:: Enables virtual env mode and then starts Sanatan_Raksha_System
-env\scripts\activate.bat && py -m Sanatan_Raksha_System
+TITLE Ultra_Union_Scanner
+:: Enables virtual env mode and then starts Ultra_Union_Scanner
+env\scripts\activate.bat && py -m Ultra_Union_Scanner

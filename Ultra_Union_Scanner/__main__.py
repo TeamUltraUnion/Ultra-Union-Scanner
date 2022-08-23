@@ -4,17 +4,14 @@ from Ultra_Union_Scanner import (
     make_collections,
     INSPECTORS,
     ENFORCERS,
-    Skynet_logs,
-)
+    Skynet_logs)
 from Ultra_Union_Scanner.strings import on_string
 import logging
 import importlib
 import asyncio
 import time
 
-logging.basicConfig(
-    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
-)
+logging.basicConfig(format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING)
 
 from Ultra_Union_Scanner.plugins import to_load
 

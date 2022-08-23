@@ -1,10 +1,10 @@
-from Sanatan_Raksha_System import System, system_cmd
+from Ultra_Union_Scanner import System, system_cmd
 import os
 import sys
 import subprocess
 
 
-@System.on(system_cmd(pattern=r"srs gitpull"))
+@System.on(system_cmd(pattern=r"uus gitpull"))
 async def gitpull(event):
     subprocess.Popen("git pull", stdout=subprocess.PIPE, shell=True)
     await event.reply("Git pulled probably.")
@@ -12,7 +12,7 @@ async def gitpull(event):
     os.execv("start.bat", sys.argv)
 
 
-@System.on(system_cmd(pattern=r"srs restart"))
+@System.on(system_cmd(pattern=r"uus restart"))
 async def reboot(event):
     if event.fwd_from:
         return
@@ -22,9 +22,9 @@ async def reboot(event):
     sys.exit()
 
 
-@System.on(system_cmd(pattern=r"srs shutdown"))
+@System.on(system_cmd(pattern=r"uus shutdown"))
 async def shutdown(event):
     if event.fwd_from:
         return
-    await event.reply("Shutting Down... ")
+    await event.reply("Shutting Down...")
     await System.disconnect()

@@ -1,4 +1,3 @@
-   
 help_plus = """ Here is Help for **Bancodes** :-
 **•** `{UUSx00}` **SCAMMER.**
 **•** `{UUSx01}` **SPAM ADDING MEMBER**

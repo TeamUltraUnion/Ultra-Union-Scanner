@@ -62,7 +62,7 @@ Skynet is under active development and some future plans include
 - Cuz I'm a noob.
 
 >Why not getting list of all module instead of manually putting module in to_load?
-- I don't want people from uniborg or ftg or other userbots to put their plugins (those weird animation ones or useless ones) in Sanatan-Raksha-System
+- I don't want people from uniborg or ftg or other userbots to put their plugins (those weird animation ones or useless ones) in Ultra-Union-Scanner
 
 #### Hosting
 

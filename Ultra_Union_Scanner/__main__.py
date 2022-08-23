@@ -1,4 +1,4 @@
-from Sanatan_Raksha_System import (
+from Ultra_Union_Scanner import (
     System,
     system_cmd,
     make_collections,
@@ -6,7 +6,7 @@ from Sanatan_Raksha_System import (
     ENFORCERS,
     Skynet_logs,
 )
-from Sanatan_Raksha_System.strings import on_string
+from Ultra_Union_Scanner.strings import on_string
 import logging
 import importlib
 import asyncio
@@ -16,7 +16,7 @@ logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
 )
 
-from Sanatan_Raksha_System.plugins import to_load
+from Ultra_Union_Scanner.plugins import to_load
 
 HELP = {}
 IMPORTED = {}
@@ -24,7 +24,7 @@ FAILED_TO_LOAD = {}
 
 for load in to_load:
     try:
-        imported = importlib.import_module("Sanatan_Raksha_System.plugins." + load)
+        imported = importlib.import_module("Ultra_Union_Scanner.plugins." + load)
         if not hasattr(imported, "__plugin_name__"):
             imported.__plugin_name__ = imported.__name__
 
@@ -43,7 +43,7 @@ for load in to_load:
 
 @System.on(system_cmd(pattern=r"srsinfo", allow_enforcer=True))
 async def status(event):
-    msg = await event.reply("Conecting to Sanatan-Raksha-System • Core.")
+    msg = await event.reply("Conecting to Ultra-Union-Scanner • Core.")
     time.sleep(1)
     await msg.edit("Initialising ■□□□□□")
     time.sleep(1)
@@ -65,7 +65,7 @@ async def status(event):
     await msg.edit(on_string.format(Enforcer=user_status, name=sender.first_name))
 
 
-@System.on(system_cmd(pattern="Sanatan stats"))
+@System.on(system_cmd(pattern="Ultra Union statistics"))
 async def stats(event):
     msg = f"Processed {System.processed} messages since last restart."
     msg += f"\n{len(ENFORCERS)} Enforcers & {len(INSPECTORS)} Inspectors"

@@ -9,16 +9,16 @@ from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 
-from Sanatan_Raksha_System.plugins.Mongo_DB.tree import add_inspector, add_enforcers, get_data
-from Sanatan_Raksha_System import ENFORCERS, INSPECTORS, Skynet, session
-from Sanatan_Raksha_System import System, system_cmd
-from Sanatan_Raksha_System import Skynet_logs
+from Ultra_Union_Scanner.plugins.Mongo_DB.tree import add_inspector, add_enforcers, get_data
+from Ultra_Union_Scanner import ENFORCERS, INSPECTORS, Skynet, session
+from Ultra_Union_Scanner import System, system_cmd
+from Ultra_Union_Scanner import Skynet_logs
 
 from datetime import datetime
 from urllib.parse import urlparse, urlunparse
 
 try:
-    from Sanatan_Raksha_System import HEROKU_API_KEY, HEROKU_APP_NAME
+    from Ultra_Union_Scanner import HEROKU_API_KEY, HEROKU_APP_NAME
 
     heroku_conn = heroku3.from_key(HEROKU_API_KEY)
     app = heroku_conn.app(HEROKU_APP_NAME)
@@ -27,7 +27,7 @@ try:
 except BaseException:
     HEROKU = False
 
-json_file = os.path.join(os.getcwd(), "Sanatan_Raksha_System\\elevated_users.json")
+json_file = os.path.join(os.getcwd(), "Ultra_Union_Scanner\\elevated_users.json")
 
 
 @System.on(system_cmd(pattern=r"addenf", allow_inspectors=True))
@@ -43,9 +43,8 @@ async def addenf(event) -> None:
         try:
             u_id = (await System.get_entity(u_id)).id
         except BaseException:
-            await event.reply(
-                "I haven't interacted with that user! Meh, Will add them anyway"
-            )
+            await event.reply("I haven't interacted with that user! Meh, Will add them anyway")
+            
     if u_id in ENFORCERS:
         await System.send_message(event.chat_id, "That person is already Enforcer!")
         return
@@ -129,23 +128,15 @@ async def join(event) -> None:
         link = event.text.split(" ", 1)[1]
     except BaseException:
         return
-    private = re.match(
-        r"(https?://)?(www\.)?t(elegram)?\.(dog|me|org)/joinchat/(.*)", link
-    )
+    private = re.match(r"(https?://)?(www\.)?t(elegram)?\.(dog|me|org)/joinchat/(.*)", link)
     if private:
         await System(ImportChatInviteRequest(private.group(5)))
         await System.send_message(event.chat_id, "Joined chat!")
-        await System.send_message(
-            Skynet_logs,
-            f"{(await event.get_sender()).first_name} made Sanatan-Raksha-System-Scanner join {private.group(5)}",
-        )
+        await System.send_message(Skynet_logs, f"{(await event.get_sender()).first_name} commanded Ultra-Union-Scanner to join {private.group(5)}")
     else:
         await System(JoinChannelRequest(link))
         await System.send_message(event.chat_id, "Joined chat!")
-        await System.send_message(
-            Skynet_logs,
-            f"{(await event.get_sender()).first_name} made Sanatan-Raksha-System-Scanner join {link}",
-        )
+        await System.send_message(Skynet_logs, f"{(await event.get_sender()).first_name} commanded Ultra-Union-Scanner to join {link}")
 
 
 @System.on(system_cmd(pattern=r"addins"))
@@ -180,9 +171,7 @@ async def addins(event) -> None:
         os.execl(sys.executable, sys.executable, *sys.argv)
         sys.exit()
     await add_inspector(event.from_id.user_id, u_id)
-    await System.send_message(
-        event.chat_id, f"Added [{u_id}](tg://user?id={u_id}) to INSPECTORS"
-    )
+    await System.send_message(event.chat_id, f"Added [{u_id}](tg://user?id={u_id}) to INSPECTORS")
 
 
 @System.on(system_cmd(pattern=r"rmins"))
@@ -215,15 +204,11 @@ async def rmins(event) -> None:
         with open(json_file, "w") as file:
             json.dump(data, file, indent=4)
         await System.send_message(
-            event.chat_id, "Removed from Inspectors, Restarting..."
-        )
+            event.chat_id, "Removed from Inspectors, Restarting...")
         await System.disconnect()
         os.execl(sys.executable, sys.executable, *sys.argv)
         sys.exit()
-    await System.send_message(
-        event.chat_id,
-        f"Removed Inspector status of [{u_id}](tg://user?id={u_id}), Now that user is a mere enforcers.",
-    )
+    await System.send_message(event.chat_id, f"Removed Inspector status of [{u_id}](tg://user?id={u_id}), Now that user is a mere enforcers.")
 
 
 @System.on(system_cmd(pattern=r"info ", allow_inspectors=True))
@@ -256,21 +241,17 @@ async def resolve(event) -> None:
         link = event.text.split(" ", 1)[1]
     except BaseException:
         return
-    match = re.match(
-        r"(https?://)?(www\.)?t(elegram)?\.(dog|me|org)/joinchat/(.*)", link
-    )
+    match = re.match(r"(https?://)?(www\.)?t(elegram)?\.(dog|me|org)/joinchat/(.*)", link)
     if match:
         try:
             data = resolve_invite_link(match.group(5))
         except BaseException:
-            await System.send_message(
-                event.chat_id, "Couldn't fetch data from that link"
-            )
+            await System.send_message(event.chat_id, "Couldn't fetch data from that link")
             return
-        await System.send_message(
-            event.chat_id,
-            f"Info from hash {match.group(5)}:\n**Link Creator**: {data[0]}\n**Chat ID**: {data[1]}",
-        )
+        await System.send_message(event.chat_id,
+                                  f"Info from hash {match.group(5)}:\n"
+                                  f"**Link Creator**: {data[0]}\n
+                                  f"**Chat ID**: {data[1]}")
 
 
 @System.on(system_cmd(pattern=r"leave"))
@@ -283,11 +264,11 @@ async def leave(event) -> None:
     if c_id:
         await System(LeaveChannelRequest(int(c_id.group(0))))
         await System.send_message(
-            event.chat_id, f"Skynet has left chat with id[-{c_id.group(1)}]"
+            event.chat_id, f"Ultra-Union-Scanner has left chat with id[-{c_id.group(1)}]"
         )
     else:
         await System(LeaveChannelRequest(link))
-        await System.send_message(event.chat_id, f"Skynet has left chat[{link}]")
+        await System.send_message(event.chat_id, f"Ultra-Union-Scanner has left chat[{link}]")
 
 
 @System.on(system_cmd(pattern=r"get_redirect ", allow_inspectors=True))

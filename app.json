@@ -1,12 +1,12 @@
 {
-      "name": "Sanatan-Raksha-System",
-      "description": "A bhagwat-gita themed Telegram Gban Userbot.",
-      "keywords": ["telegram"],
-   "repository": "https://github.com/itzzzzyashu/Sanatan-Raksha-System",
+      "name": "Ultra-Union-Scannerm",
+      "description": "A PsychoPass themed Telegram Gban Userbot.",
+      "keywords": ["telegram", "userbot", "scanner"],
+   "repository": "https://github.com/TeamUltraUnion/Ultra-Union-Scanner",
    "addons": [
       {
          "options": {
-            "version": "11"
+            "version": "1.0.0"
          },
          "plan": "heroku-postgresql"
       }
@@ -14,7 +14,7 @@
    "env": {
       "XYZ": {
          "description": "You can Enter Anything here",
-         "required": true,
+         "required": false,
          "value": ""
       }
    }

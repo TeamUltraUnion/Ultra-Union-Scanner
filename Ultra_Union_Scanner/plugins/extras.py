@@ -17,6 +17,7 @@ from Ultra_Union_Scanner import Skynet_logs
 from datetime import datetime
 from urllib.parse import urlparse, urlunparse
 
+
 try:
     from Ultra_Union_Scanner import HEROKU_API_KEY, HEROKU_APP_NAME
 
